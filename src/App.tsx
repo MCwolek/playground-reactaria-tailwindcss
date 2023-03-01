@@ -1,4 +1,7 @@
+import { PressEvent } from '@react-types/shared';
 import Button from './Button';
+
+const handlePress = (e: PressEvent) => console.log('button pressed', e.target.textContent);
 
 const App = () => {
 	return (
@@ -7,24 +10,32 @@ const App = () => {
 			<div className="uppercase">primary</div>
 			<div className="flex space-x-2.5">
 				<div>
-					<Button size="small">Lorem Ipsum</Button>
+					<Button size="small" leadingIcon onPress={handlePress}>
+						Lorem Ipsum
+					</Button>
 				</div>
 				<div>
-					<Button size="small" isDisabled>
+					<Button size="small" trailingIcon isDisabled onPress={handlePress}>
 						Disabled
 					</Button>
 				</div>
 				<div>
-					<Button>Lorem Ipsum</Button>
+					<Button leadingIcon trailingIcon onPress={handlePress}>
+						Lorem Ipsum
+					</Button>
 				</div>
 				<div>
-					<Button isDisabled>Disabled</Button>
+					<Button isDisabled onPress={handlePress}>
+						Disabled
+					</Button>
 				</div>
 				<div>
-					<Button size="large">Lorem Ipsum</Button>
+					<Button size="large" trailingIcon onPress={handlePress}>
+						Lorem Ipsum
+					</Button>
 				</div>
 				<div>
-					<Button size="large" isDisabled>
+					<Button size="large" isDisabled onPress={handlePress}>
 						Disabled
 					</Button>
 				</div>
@@ -33,30 +44,39 @@ const App = () => {
 			<div className="uppercase">outlined</div>
 			<div className="flex space-x-2.5">
 				<div>
-					<Button size="small" style="outlined">
+					<Button size="small" style="outlined" leadingIcon onPress={handlePress}>
 						Lorem Ipsum
 					</Button>
 				</div>
 				<div>
-					<Button size="small" style="outlined" isDisabled>
+					<Button
+						size="small"
+						style="outlined"
+						isDisabled
+						leadingIcon
+						trailingIcon
+						onPress={handlePress}
+					>
 						Disabled
 					</Button>
 				</div>
 				<div>
-					<Button style="outlined">Lorem Ipsum</Button>
-				</div>
-				<div>
-					<Button style="outlined" isDisabled>
-						Disabled
-					</Button>
-				</div>
-				<div>
-					<Button size="large" style="outlined">
+					<Button style="outlined" leadingIcon trailingIcon onPress={handlePress}>
 						Lorem Ipsum
 					</Button>
 				</div>
 				<div>
-					<Button size="large" style="outlined" isDisabled>
+					<Button style="outlined" isDisabled onPress={handlePress}>
+						Disabled
+					</Button>
+				</div>
+				<div>
+					<Button size="large" style="outlined" leadingIcon onPress={handlePress}>
+						Lorem Ipsum
+					</Button>
+				</div>
+				<div>
+					<Button size="large" style="outlined" isDisabled onPress={handlePress}>
 						Disabled
 					</Button>
 				</div>
@@ -65,35 +85,32 @@ const App = () => {
 			<div className="uppercase">error</div>
 			<div className="flex space-x-2.5">
 				<div>
-					<Button size="small" style="error">
+					<Button size="small" style="error" trailingIcon onPress={handlePress}>
 						Lorem Ipsum
 					</Button>
 				</div>
 				<div>
-					<Button size="small" style="error" isDisabled>
+					<Button size="small" style="error" isDisabled leadingIcon onPress={handlePress}>
 						Disabled
 					</Button>
 				</div>
 				<div>
-					<Button
-						style="error"
-						onPress={(e) => console.log('button clicked', e.target.textContent)}
-					>
+					<Button style="error" onPress={handlePress}>
 						Lorem Ipsum
 					</Button>
 				</div>
 				<div>
-					<Button style="error" isDisabled>
+					<Button style="error" isDisabled leadingIcon trailingIcon onPress={handlePress}>
 						Disabled
 					</Button>
 				</div>
 				<div>
-					<Button size="large" style="error">
+					<Button size="large" style="error" onPress={handlePress} leadingIcon trailingIcon>
 						Lorem Ipsum
 					</Button>
 				</div>
 				<div>
-					<Button size="large" style="error" isDisabled>
+					<Button size="large" style="error" isDisabled onPress={handlePress}>
 						Disabled
 					</Button>
 				</div>
